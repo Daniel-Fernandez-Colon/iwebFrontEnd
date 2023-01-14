@@ -26,7 +26,7 @@ export default {
             this.nombreUsuario = nombre.substring(0, indice);
         }
         var parametro = this.$route.params.id;
-        axios.get("https://2kl0wm.deta.dev/appVivienda/vivienda", { params: { id: parametro } }).then(response => this.vivienda = response.data);
+        axios.get("https://b1zw5s.deta.dev/appVivienda/vivienda", { params: { id: parametro } }).then(response => this.vivienda = response.data);
     },
     methods: {
 
