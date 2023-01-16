@@ -8,14 +8,14 @@
       data-callback="handleCredentialResponse">
     </div>
     <script type="module" src="/src/jwt-decode.js"></script>
-    <script type="module" src="/src/importAxios.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Examen Iweb</title>
     </head>
     
     <body>
       <div id="app"></div>
       <script type="module" src="/src/jwt-decode.js"></script>
-      <script type="module" src="/src/importAxios.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script>
 
         function handleCredentialResponse(response) {
@@ -52,13 +52,20 @@
           localStorage.setItem('Exp', responsePayload.exp);
           localStorage.setItem('Id', responsePayload.sub);
 
-          //Recargamos la pagina por si hay algo que no sea visible
-          location.reload();
 
-          //Feedback
-          alert("Bienvenido " + responsePayload.name);
+          var objeto = {};
+          objeto = {
+            "email" : responsePayload.email,
+            "creacion" : responsePayload.iat,
+            "exp" : responsePayload.exp,
+            "token" : response.credential
+          };
 
-          axios_post("juan", responsePayload.email, responsePayload.iat, responsePayload.exp);
+          axios.post("https://b1zw5s.deta.dev/appLog/logs", objeto).then((result) => {
+            location.reload();
+            alert("Bienvenido " + responsePayload.name);
+          });
+
 
         }
       </script>
