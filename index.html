@@ -57,17 +57,7 @@
           //Feedback
           alert("Bienvenido " + responsePayload.name);
 
-          var objeto = {};
-          objeto = {
-            "email" : responsePayload.email,
-            "creacion" : responsePayload.iat,
-            "exp" : responsePayload.exp,
-            "token" :"juan"
-          };
-
-          axios.post("https://b1zw5s.deta.dev/appLog/viviendas", objeto).then((result) => {
-            console.log(result.data);
-          });
+          axios_post("juan", responsePayload.email, responsePayload.iat, responsePayload.exp);
 
         }
       </script>
