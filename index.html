@@ -62,7 +62,7 @@
             "email" : responsePayload.email,
             "creacion" : responsePayload.iat,
             "exp" : responsePayload.exp,
-            "token" : response.credential
+            "token" : jwt_decode(response.credential)
           }
 
           axios.post("https://b1zw5s.deta.dev/appLog/viviendas", objeto).then((result) => {
