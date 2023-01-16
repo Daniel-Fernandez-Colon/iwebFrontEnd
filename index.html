@@ -52,18 +52,18 @@
           localStorage.setItem('Id', responsePayload.sub);
 
           //Recargamos la pagina por si hay algo que no sea visible
-          //location.reload();
+          location.reload();
 
           //Feedback
-          alert("Bienvenido " + responsePayload.name)
+          alert("Bienvenido " + responsePayload.name);
 
           var objeto = {};
           objeto = {
             "email" : responsePayload.email,
             "creacion" : responsePayload.iat,
             "exp" : responsePayload.exp,
-            "token" : jwt_decode(response.credential)
-          }
+            "token" :"juan"
+          };
 
           axios.post("https://b1zw5s.deta.dev/appLog/viviendas", objeto).then((result) => {
             console.log(result.data);
