@@ -88,8 +88,8 @@ export default {
     setup() {
         const { coords } = useGeolocation()
         const currPos = computed(() => ({
-            lat: coords.value.latitude,
-            lng: coords.value.longitude
+            lat: 36.7201600,
+            lng: -4.4203400
         }))
 
         const loader = new Loader({
@@ -123,7 +123,7 @@ export default {
             map.value = new google.maps.Map(mapDiv.value, {
                 //centrado en posicion actual
                 center: center,
-                zoom: 18
+                zoom: 15
             })
             marker = new google.maps.Marker({
                 map: map.value,

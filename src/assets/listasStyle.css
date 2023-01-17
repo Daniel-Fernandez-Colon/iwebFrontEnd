@@ -34,6 +34,11 @@
   width: 20%;
 }
 
+.email-cell {
+  width: 45%;
+  margin-right: 10%;
+}
+
 .token-cell {
   height: 120px;
   width: 1000px;

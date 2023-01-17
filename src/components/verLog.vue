@@ -67,13 +67,13 @@ export default {
         <div v-else>
             <table v-if="this.logs" class="tabla-Todo">
                 <tr class="fila-encabezado">
-                    <td class="celda-text">Email</td>
+                    <td class="email-cell">Email</td>
                     <td class="celda-text">Timestamp Creacion</td>
                     <td class="celda-text">Timestamp Caducidad</td>
-                    <td class="celda-text">Token Identificacion</td>
+                    <td class="token-cell">Token Identificacion</td>
                 </tr>
                 <tr class="fila" v-for="log in logs" :key="log._id">
-                    <td class="celda-text"> {{ log.email }} </td>
+                    <td class="email-cell"> {{ log.email }} </td>
                     <td class="celda-text">{{ timestampTransform(log.creacion) }}</td>
                     <td class="celda-text">{{ timestampTransform(log.exp) }}</td>
                     <td class="token-cell">{{ log.token }}</td>
