@@ -3,6 +3,7 @@ import crearAnuncioComponent from '../components/crearAnuncioComponent.vue'
 import verListaComponent from '../components/verListaComponent.vue'
 import homeComponent from '../components/homeComponent.vue'
 import verAnuncioComponent from '../components/verAnuncioComponent.vue'
+import verLogComponent from '../components/verLog.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/verAnuncio/:id',
       name: 'VerAnuncio',
       component: verAnuncioComponent
+    },
+    {
+      path: '/verLog',
+      name: 'VerLog',
+      component: verLogComponent
     }
   ]
 })

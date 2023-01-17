@@ -193,8 +193,23 @@ export default {
             formData: null,
             cloudname: "dmlvz4xs6",
             preset: "hxud9mfy",
-            token: jwt_decode(localStorage.getItem('Token'))
+            token: null
         }
+    },
+    created() {
+        // Simple GET request using axios
+        if (localStorage.getItem('Token')) {
+            this.token = jwt_decode(localStorage.getItem('Token'));
+        } else {
+            this.token = null;
+        }
+    },
+    beforeUpdate(){
+        if (localStorage.getItem('Token')) {
+            this.token = jwt_decode(localStorage.getItem('Token'));
+        } else {
+            this.token = null;
+        }   
     }
 }
 
@@ -203,11 +218,11 @@ export default {
 
 
 <template>
-
-<h1>Registrar anuncio</h1>
-    <h5>(Los campos marcados con * son obligatorios)</h5>  
+    <div v-if="token">
+        <h1>Registrar anuncio</h1>
+        <h5>(Los campos marcados con * son obligatorios)</h5>
         <form @submit.prevent="upload(resul_dir, resul_lat, resul_lng)">
-           
+
             <label for="caracteristicas">Caracteristicas</label><br>
             <input type="text" v-model="caracteristicas" size="50" width="50" /> <br>
 
@@ -234,10 +249,17 @@ export default {
             <br>
 
             <input type="submit" :disabled="filesSelected < 1" value="Crear">
-        
+
         </form>
 
-        <div class="m-6" ref="mapDiv" style="width: 40%; height: 400px; margin-left: 470px;"/>
+        <div class="m-6" ref="mapDiv" style="width: 40%; height: 400px; margin-left: 470px;" />
+
+
+    </div>
+    <div v-else>
+        Inicia sesión para acceder
+    </div>
+
 </template>
 
 

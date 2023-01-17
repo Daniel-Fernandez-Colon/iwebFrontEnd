@@ -50,8 +50,9 @@ export default{
 
     <nav>
       <router-link to="/"> Inicio </router-link>
-      <router-link to="/verLista"> Ver Lista</router-link>
+      <router-link v-if="token" to="/verLista"> Ver Lista</router-link>
       <router-link v-if="token" to="/crearAnuncio"> Crear Anuncio </router-link>
+      <router-link v-if="token" to="/verLog"> Mostrar Log </router-link>
     </nav>
     <!--
           Boton inicio de sesión

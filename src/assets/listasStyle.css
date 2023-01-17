@@ -27,8 +27,18 @@
 
 .celda-text{
   width: 15%;
+  margin-right: 10%;
 }
 
 .celda-button{
   width: 20%;
+}
+
+.token-cell {
+  height: 120px;
+  width: 1000px;
+  margin: 0 auto;
+  display: block;
+  overflow: auto;
+  margin-left: 10%;
 }
