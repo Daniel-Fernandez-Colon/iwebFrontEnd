@@ -1,0 +1,14 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-row {
+    padding: 8px;
+    text-align: left;
+}
+
+.title {
+    font-weight: bold;
+    color: black;
+}

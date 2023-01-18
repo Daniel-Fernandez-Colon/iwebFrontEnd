@@ -68,3 +68,21 @@ body {
     color: white;
     background-color: #735F58;
 }
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: lightgray;
+}

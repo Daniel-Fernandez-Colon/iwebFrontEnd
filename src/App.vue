@@ -24,10 +24,6 @@ export default{
     getId() {
       return localStorage.getItem('Id');
     },
-    //Mostramos un alert con la información
-    mostrarUsuario() {
-      alert("Timestamp: " + this.getTime() + " -- Email: " + this.getEmail() + "    Caducidad: " + this.getExp() + " -- ID: " + this.getId());
-    },
     //Borramos los datos guardados
     cerrarSesion() {
       localStorage.clear();
@@ -50,9 +46,7 @@ export default{
 
     <nav>
       <router-link to="/"> Inicio </router-link>
-      <router-link v-if="token" to="/verLista"> Ver Lista</router-link>
-      <router-link v-if="token" to="/crearAnuncio"> Crear Anuncio </router-link>
-      <router-link v-if="token" to="/verLog"> Mostrar Log </router-link>
+      <router-link v-if="token" to="/verPerfil">Mi Perfil</router-link>
     </nav>
     <!--
           Boton inicio de sesión
@@ -61,12 +55,6 @@ export default{
       <a class="g_id_signin" data-type="standard" data-shape="pill" data-size="large"></a>
     </div>
     
-    <!--
-          Si se ha iniciado sesion, boton con info y cerrar sesion
-        -->
-    <div class="logo" v-if="token">
-      <button class="email" v-if="token" v-on:click="mostrarUsuario();"> Usuario </button>
-    </div>
     
     <div class="logo" v-if="token">
       <button class="cerrar" v-if="token" v-on:click="cerrarSesion();"> Cerrar Sesion</button>

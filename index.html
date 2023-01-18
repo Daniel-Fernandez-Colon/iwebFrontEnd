@@ -45,8 +45,8 @@
           //Guardamos email y token en la memoria
           
           localStorage.setItem('Token', response.credential);
-          localStorage.setItem('NombreUsuario', responsePayload.email);
-
+          localStorage.setItem('NombreUsuario', responsePayload.name);
+          localStorage.setItem('ImagenUsuario', responsePayload.picture);
           localStorage.setItem('Email', responsePayload.email);
           localStorage.setItem('Time', responsePayload.iat);
           localStorage.setItem('Exp', responsePayload.exp);
